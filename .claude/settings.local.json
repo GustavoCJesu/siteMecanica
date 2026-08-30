@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Start-Process \"c:\\\\Users\\\\Gustavo\\\\Documents\\\\GitHub\\\\SiteMecanica\\\\index.html\")"
+    ]
+  }
+}
