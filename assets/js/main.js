@@ -71,6 +71,29 @@
     });
   }
 
+  /* ---------- Busca de peça no banner -> WhatsApp ---------- */
+  var heroSearch = document.getElementById("heroSearch");
+  if (heroSearch) {
+    heroSearch.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var peca = heroSearch.peca.value.trim();
+      var marca = heroSearch.marca.value.trim();
+      var modelo = heroSearch.modelo.value.trim();
+      var ano = heroSearch.ano.value.trim();
+
+      var veiculo = [marca, modelo, ano].filter(Boolean).join(" ");
+      var texto = "Olá! Estou procurando: " + peca;
+      if (veiculo) {
+        texto += "\nVeículo: " + veiculo;
+      }
+      texto += "\nVocês têm essa peça no estoque?";
+
+      var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(texto);
+      window.open(url, "_blank", "noopener");
+    });
+  }
+
   /* ---------- Formulário de contato -> WhatsApp ---------- */
   var contactForm = document.getElementById("contactForm");
   if (contactForm) {
