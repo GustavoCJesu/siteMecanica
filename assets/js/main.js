@@ -3,7 +3,6 @@
 
   var WHATSAPP_NUMBER = "554136211697";
 
-  /* ---------- Header: sombra ao rolar ---------- */
   var header = document.querySelector(".site-header");
   function onScrollHeader() {
     if (window.scrollY > 8) {
@@ -17,7 +16,6 @@
     window.addEventListener("scroll", onScrollHeader, { passive: true });
   }
 
-  /* ---------- Menu mobile ---------- */
   var navToggle = document.getElementById("navToggle");
   var mainNav = document.getElementById("mainNav");
 
@@ -37,7 +35,6 @@
     });
   }
 
-  /* ---------- Revelação ao rolar ---------- */
   var revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && revealEls.length) {
     var observer = new IntersectionObserver(
@@ -56,7 +53,6 @@
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  /* ---------- Botão voltar ao topo ---------- */
   var backToTop = document.getElementById("backToTop");
   if (backToTop) {
     window.addEventListener(
@@ -71,7 +67,6 @@
     });
   }
 
-  /* ---------- Formulário de contato -> WhatsApp ---------- */
   var contactForm = document.getElementById("contactForm");
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
@@ -91,7 +86,6 @@
     });
   }
 
-  /* ---------- Ano no rodapé ---------- */
   var yearEl = document.getElementById("year");
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
