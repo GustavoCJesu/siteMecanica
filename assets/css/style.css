@@ -127,17 +127,6 @@ p { margin: 0 0 1em; }
 
 .btn-header { flex-shrink: 0; }
 
-.link-arrow {
-  display: inline-block;
-  font-weight: 600;
-  color: var(--color-brand-red);
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.15s ease;
-  display: flex;
-  align-items: center;
-}
-.link-arrow:hover { border-color: var(--color-brand-red); }
-
 .site-header {
   position: sticky;
   top: 0;
@@ -415,6 +404,8 @@ p { margin: 0 0 1em; }
   border: 1px solid var(--color-dark-border);
   border-radius: var(--radius);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 .part-card:hover { transform: translateY(-4px); border-color: var(--color-accent); }
@@ -426,9 +417,32 @@ p { margin: 0 0 1em; }
   border-bottom: 3px solid var(--color-accent);
 }
 
-.part-card-body { padding: 24px; height: 50%; display: flex; flex-direction: column; justify-content: space-between;}
+.part-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 .part-card-body h3 { font-size: 1.15rem; margin-bottom: 0.4em; }
 .part-card-body p { color: var(--color-light-text-soft); margin-bottom: 1.2em; }
+
+.part-card-cta {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  padding: 12px;
+  font-size: 0.78rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.cta-fim { white-space: nowrap; }
+
+.part-card-cta svg {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-left: 5px;
+}
 
 .advantages-grid {
   display: grid;
@@ -702,6 +716,8 @@ p { margin: 0 0 1em; }
 
 @media (max-width: 600px) {
   html { scroll-padding-top: 78px; }
+  .part-card-body { padding: 20px; }
+  .part-card-cta { padding: 12px 10px; font-size: 0.76rem; }
   .section { padding: 56px 0; }
   .logo-mark { height: 46px; }
   .cards-grid,
